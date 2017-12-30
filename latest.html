@@ -16,7 +16,7 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-    <title>v0.21.1 Final (December 12, 2017) &#8212; pandas: Python Data Analysis Library</title>
+    <title>v0.22.0 Final (December 29, 2017) &#8212; pandas: Python Data Analysis Library</title>
     <link rel="stylesheet" href="_static/pydata.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -68,7 +68,7 @@
 
 	<div class="tile">
 				<h4>Release</h4>
-				0.21.1 - December 2017 <br/>
+				0.22.0 - December 2017 <br/>
 				<a href="https://pypi.org/project/pandas/#files">download</a>          //
 				<a href="http://pandas.pydata.org/pandas-docs/stable/">docs</a> //
 				<a href="http://pandas.pydata.org/pandas-docs/stable/pandas.pdf">pdf</a>
@@ -76,13 +76,21 @@
 
 	<div class="tile">
 		<h4>Development</h4>
-        0.22.0 - 2017<br/>
+        0.23.0 - 2018<br/>
         <a href="https://github.com/pydata/pandas">github</a> //
         <a href="http://pandas-docs.github.io/pandas-docs-travis/">docs</a>
     </div>
 
     <div class="tile">
       <h4>Previous Releases</h4>
+      
+          <div>
+              0.21.1 -
+              <a href="https://pypi.org/project/pandas/0.21.1/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.21/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.21/pandas.pdf">pdf</a>
+          </div>
+
       
           <div>
               0.21.0 -
@@ -206,23 +214,22 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="v0-21-1-final-december-12-2017">
-<h1>v0.21.1 Final (December 12, 2017)<a class="headerlink" href="#v0-21-1-final-december-12-2017" title="Permalink to this headline">¶</a></h1>
-<p>This is a minor bug-fix release in the 0.21.x series and includes some
-small regression fixes, bug fixes and performance improvements. We
-recommend that all users upgrade to this version.</p>
-<p>Highlights include:</p>
+  <div class="section" id="v0-22-0-final-december-29-2017">
+<h1>v0.22.0 Final (December 29, 2017)<a class="headerlink" href="#v0-22-0-final-december-29-2017" title="Permalink to this headline">¶</a></h1>
+<p>This is a major release from 0.21.1 and includes a single, API-breaking change.
+We recommend that all users upgrade to this version after carefully reading the
+release note.</p>
+<p>The only changes are:</p>
 <ul class="simple">
-<li>Temporarily restore matplotlib datetime plotting functionality. This
-should resolve issues for users who relied implicitly on pandas to
-plot datetimes with matplotlib. See
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.21.1/whatsnew.html#restore-matplotlib-datetime-converter-registration">here</a>.</li>
-<li>Improvements to the Parquet IO functions introduced in 0.21.0. See
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.21.1/whatsnew.html#improvements-to-the-parquet-io-functionality">here</a>.</li>
+<li>The sum of an empty or all-<em>NA</em> <code class="docutils literal"><span class="pre">Series</span></code> is now <code class="docutils literal"><span class="pre">0</span></code></li>
+<li>The product of an empty or all-<em>NA</em> <code class="docutils literal"><span class="pre">Series</span></code> is now <code class="docutils literal"><span class="pre">1</span></code></li>
+<li>We’ve added a <code class="docutils literal"><span class="pre">min_count</span></code> parameter to <code class="docutils literal"><span class="pre">.sum()</span></code> and <code class="docutils literal"><span class="pre">.prod()</span></code> controlling
+the minimum number of valid values for the result to be valid. If fewer than
+<code class="docutils literal"><span class="pre">min_count</span></code> non-<em>NA</em> values are present, the result is <em>NA</em>. The default is
+<code class="docutils literal"><span class="pre">0</span></code>. To return <code class="docutils literal"><span class="pre">NaN</span></code>, the 0.21 behavior, use <code class="docutils literal"><span class="pre">min_count=1</span></code>.</li>
 </ul>
-<p>See the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.21.1/whatsnew.html#improvements-to-the-parquet-io-functionality">v0.21.1
-Whatsnew</a>
-overview for an extensive list of all the changes for 0.21.1.</p>
+<p>See the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.22.0/whatsnew.html#whatsnew-0220">pandas 0.22.0 whatsnew</a>
+overview for further explanation of all the places in the library this affects.</p>
 </div>
 
 
