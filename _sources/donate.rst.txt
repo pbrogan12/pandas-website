@@ -4,7 +4,7 @@ Donations
 
 The *pandas* Project will always be 100% open source software, free for all to use and released under the liberal terms of the modified BSD license. If you have found *pandas* to be useful in your work, research or company, please consider making a donation to the project commensurate with your resources. Any amount helps! All donations will be used strictly to fund the development of the *pandas* Projects's open source software, documentation and community.
 
-Donations are managed by the `NUMFocus <http://www.numfocus.org/open-source-projects.html>`__ Foundation, which is the legal and fiscal umbrella for the project. NumFOCUS is a 501(c)3 non-profit foundation, so if you are subject to US Tax law, your contributions will be tax-deductible.
+Donations are managed by the `NumFOCUS <http://www.numfocus.org/open-source-projects.html>`__ Foundation, which is the legal and fiscal umbrella for the project. NumFOCUS is a 501(c)3 non-profit foundation, so if you are subject to US Tax law, your contributions will be tax-deductible.
 
 .. raw:: html
 

@@ -29,5 +29,5 @@ contribute their valuable time and energy to help make open source *pandas*
 possible. Thank you to `all of our contributors
 <https://github.com/pydata/pandas/contributors>`_.
 
-Since 2015, *pandas* is a `NUMFocus <http://www.numfocus.org/open-source-projects.html>`__ sponsored project. This will help ensure the success of development of *pandas* as a world-class open-source project.
+Since 2015, *pandas* is a `NumFOCUS <http://www.numfocus.org/open-source-projects.html>`__ sponsored project. This will help ensure the success of development of *pandas* as a world-class open-source project.
 
