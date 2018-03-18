@@ -15,7 +15,7 @@ Stable Release
   <https://repo.continuum.io/pkgs/>`_ and `conda-forge
   <https://anaconda.org/conda-forge/pandas>`_ channels.
 - `Christoph Gohlke <http://www.lfd.uci.edu/~gohlke>`_ kindly makes available
-  windows binaries for current versions of many python packages, including
+  Windows binaries for current versions of many Python packages, including
   `pandas <http://www.lfd.uci.edu/~gohlke/pythonlibs/#pandas>`_, which we upload
   to PyPI.
 - Source tarballs are available immediately upon release, on the `GitHub
