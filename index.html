@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">
 
       var _gaq = _gaq || [];
@@ -19,16 +20,7 @@
     <title>Python Data Analysis Library &#8212; pandas: Python Data Analysis Library</title>
     <link rel="stylesheet" href="_static/pydata.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -36,8 +28,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="The pandas project" href="about.html" /> 
-  </head>
-  <body>
+  </head><body>
 <div class="header-wrapper">
 	<div class="header">
 		<div class="logo">
@@ -228,12 +219,12 @@ We recommend that all users upgrade to this version after carefully reading the
 release note.</p>
 <p>The only changes are:</p>
 <ul class="simple">
-<li>The sum of an empty or all-<em>NA</em> <code class="docutils literal"><span class="pre">Series</span></code> is now <code class="docutils literal"><span class="pre">0</span></code></li>
-<li>The product of an empty or all-<em>NA</em> <code class="docutils literal"><span class="pre">Series</span></code> is now <code class="docutils literal"><span class="pre">1</span></code></li>
-<li>We’ve added a <code class="docutils literal"><span class="pre">min_count</span></code> parameter to <code class="docutils literal"><span class="pre">.sum()</span></code> and <code class="docutils literal"><span class="pre">.prod()</span></code> controlling
+<li>The sum of an empty or all-<em>NA</em> <code class="docutils literal notranslate"><span class="pre">Series</span></code> is now <code class="docutils literal notranslate"><span class="pre">0</span></code></li>
+<li>The product of an empty or all-<em>NA</em> <code class="docutils literal notranslate"><span class="pre">Series</span></code> is now <code class="docutils literal notranslate"><span class="pre">1</span></code></li>
+<li>We’ve added a <code class="docutils literal notranslate"><span class="pre">min_count</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">.sum()</span></code> and <code class="docutils literal notranslate"><span class="pre">.prod()</span></code> controlling
 the minimum number of valid values for the result to be valid. If fewer than
-<code class="docutils literal"><span class="pre">min_count</span></code> non-<em>NA</em> values are present, the result is <em>NA</em>. The default is
-<code class="docutils literal"><span class="pre">0</span></code>. To return <code class="docutils literal"><span class="pre">NaN</span></code>, the 0.21 behavior, use <code class="docutils literal"><span class="pre">min_count=1</span></code>.</li>
+<code class="docutils literal notranslate"><span class="pre">min_count</span></code> non-<em>NA</em> values are present, the result is <em>NA</em>. The default is
+<code class="docutils literal notranslate"><span class="pre">0</span></code>. To return <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, the 0.21 behavior, use <code class="docutils literal notranslate"><span class="pre">min_count=1</span></code>.</li>
 </ul>
 <p>See the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.22.0/whatsnew.html#whatsnew-0220">pandas 0.22.0 whatsnew</a>
 overview for further explanation of all the places in the library this affects.</p>
@@ -259,11 +250,11 @@ overview for an extensive list of all the changes for 0.21.1.</p>
 <div class="section" id="best-way-to-install">
 <h2>Best way to Install<a class="headerlink" href="#best-way-to-install" title="Permalink to this headline">¶</a></h2>
 <p>The best way to get pandas is via <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/install.html#installing-pandas-with-anaconda">conda</a></p>
-<p><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pandas</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pandas</span></code></p>
 <p>Packages are available for <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/install.html#python-version-support">all supported python versions</a>
 on Windows, Linux, and MacOS.</p>
 <p>Wheels are also uploaded to <a class="reference external" href="https://pypi.org/project/pandas/">PyPI</a> and can be installed with</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>pip install pandas
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install pandas
 </pre></div>
 </div>
 </div>

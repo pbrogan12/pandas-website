@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">
 
       var _gaq = _gaq || [];
@@ -19,24 +20,14 @@
     <title>The pandas 0.20 release &#8212; pandas: Python Data Analysis Library</title>
     <link rel="stylesheet" href="../_static/pydata.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" /> 
-  </head>
-  <body>
+  </head><body>
 <div class="header-wrapper">
 	<div class="header">
 		<div class="logo">
@@ -220,18 +211,18 @@
 As always, the full <a class="reference external" href="http://pandas.pydata.org/pandas-docs/version/0.20/whatsnew.html#v0-20-1-may-5-2017">release notes</a> are available for a detailed description of all the changes.</p>
 <div class="section" id="new-deprecations">
 <h2>New Deprecations<a class="headerlink" href="#new-deprecations" title="Permalink to this headline">¶</a></h2>
-<p>Let’s start with the two big deprecations of note in this cycle: <code class="docutils literal"><span class="pre">Panel</span></code> and <code class="docutils literal"><span class="pre">.ix</span></code>.</p>
-<p>It’s a bit sad to see <code class="docutils literal"><span class="pre">Panel</span></code> go (it’s at least partially responsible for pandas’ moniker), but this has been a long-time coming.
+<p>Let’s start with the two big deprecations of note in this cycle: <code class="docutils literal notranslate"><span class="pre">Panel</span></code> and <code class="docutils literal notranslate"><span class="pre">.ix</span></code>.</p>
+<p>It’s a bit sad to see <code class="docutils literal notranslate"><span class="pre">Panel</span></code> go (it’s at least partially responsible for pandas’ moniker), but this has been a long-time coming.
 Panel support has always been a bit behind the tabular-dataset workflows pandas has focused on.
 The 3-D structure of a Panel is much less common for many types of data analysis than the 1-D of the Series or the 2-D of the DataFrame. Going forward it makes sense for pandas to focus on these areas exclusively.</p>
 <p>Oftentimes, one can simply use a MultiIndex DataFrame for easily working with higher dimensional data.
-If you need higher dimensional data objects, fortunately there are other great projects like <a class="reference external" href="http://xarray.pydata.org/en/stable/">xarray</a> that is much better suited for such kind of data. To easily try this out and convert your pandas objects to xarray, you can use the <code class="docutils literal"><span class="pre">to_xarray</span></code> method.</p>
+If you need higher dimensional data objects, fortunately there are other great projects like <a class="reference external" href="http://xarray.pydata.org/en/stable/">xarray</a> that is much better suited for such kind of data. To easily try this out and convert your pandas objects to xarray, you can use the <code class="docutils literal notranslate"><span class="pre">to_xarray</span></code> method.</p>
 </div>
 <div class="section" id="ix-deprecation">
-<h2><code class="docutils literal"><span class="pre">ix</span></code> Deprecation<a class="headerlink" href="#ix-deprecation" title="Permalink to this headline">¶</a></h2>
-<p>A big deprecation in pandas 0.20.0 is the <code class="docutils literal"><span class="pre">.ix</span></code> indexing method. This was though because there’s so much code out there using <code class="docutils literal"><span class="pre">.ix</span></code>.
+<h2><code class="docutils literal notranslate"><span class="pre">ix</span></code> Deprecation<a class="headerlink" href="#ix-deprecation" title="Permalink to this headline">¶</a></h2>
+<p>A big deprecation in pandas 0.20.0 is the <code class="docutils literal notranslate"><span class="pre">.ix</span></code> indexing method. This was though because there’s so much code out there using <code class="docutils literal notranslate"><span class="pre">.ix</span></code>.
 To illustrate <em>why</em> we decided to deprecate it, consider the following two Series objects:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abcd&#39;</span><span class="p">))</span>
 
@@ -252,8 +243,8 @@ To illustrate <em>why</em> we decided to deprecate it, consider the following tw
 <span class="go">dtype: int64</span>
 </pre></div>
 </div>
-<p>One series with an integer index and one with an index with strings. When using <code class="docutils literal"><span class="pre">.ix</span></code> with the same values provided, the behaviour however depends on the type of the index:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<p>One series with an integer index and one with an index with strings. When using <code class="docutils literal notranslate"><span class="pre">.ix</span></code> with the same values provided, the behaviour however depends on the type of the index:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 <span class="go">2    0</span>
 <span class="go">3    1</span>
 <span class="go">dtype: int64</span>
@@ -264,15 +255,15 @@ To illustrate <em>why</em> we decided to deprecate it, consider the following tw
 <span class="go">dtype: int64</span>
 </pre></div>
 </div>
-<p>So different rows were selected with the same indexing operation. This is because in the <code class="docutils literal"><span class="pre">s1</span></code> case, <em>label-based</em> indexing was used (rows with labels 1, 2 and 3), while in the <code class="docutils literal"><span class="pre">s2</span></code> case <em>positional</em> indexing was used (rows at integer position 1 and 2, so second and third row).</p>
-<p>The fact that <code class="docutils literal"><span class="pre">.ix</span></code> could do both label-based and positional indexing caused confusion, and therefore we decided to deprecate it. Instead of using <code class="docutils literal"><span class="pre">.ix</span></code> and let pandas decide on label-based vs positional, you can explicitly use <code class="docutils literal"><span class="pre">.loc</span></code> or <code class="docutils literal"><span class="pre">.iloc</span></code> for label-based and positional indexing, respectively.</p>
+<p>So different rows were selected with the same indexing operation. This is because in the <code class="docutils literal notranslate"><span class="pre">s1</span></code> case, <em>label-based</em> indexing was used (rows with labels 1, 2 and 3), while in the <code class="docutils literal notranslate"><span class="pre">s2</span></code> case <em>positional</em> indexing was used (rows at integer position 1 and 2, so second and third row).</p>
+<p>The fact that <code class="docutils literal notranslate"><span class="pre">.ix</span></code> could do both label-based and positional indexing caused confusion, and therefore we decided to deprecate it. Instead of using <code class="docutils literal notranslate"><span class="pre">.ix</span></code> and let pandas decide on label-based vs positional, you can explicitly use <code class="docutils literal notranslate"><span class="pre">.loc</span></code> or <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> for label-based and positional indexing, respectively.</p>
 </div>
 <div class="section" id="new-highlights">
 <h2>New Highlights<a class="headerlink" href="#new-highlights" title="Permalink to this headline">¶</a></h2>
-<p>The 0.20.0 release contained several highlights (new <code class="docutils literal"><span class="pre">Interval</span></code> and <code class="docutils literal"><span class="pre">IntervalIndex</span></code> objects, improved support for ‘uint64’ data type, support for the Table Schema json spec, exporting styled DataFrames to excel, … see the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/version/0.20/whatsnew.html#v0-20-1-may-5-2017">release notes</a> for the highlights section), but we will here talk briefly about one major new feature: the <code class="docutils literal"><span class="pre">.agg</span></code> for DataFrames.
-This methods should feel familiar to users; an API that mirrors the <code class="docutils literal"><span class="pre">.groupby()</span></code>, <code class="docutils literal"><span class="pre">.rolling()</span></code>, and <code class="docutils literal"><span class="pre">.resample()</span></code>
+<p>The 0.20.0 release contained several highlights (new <code class="docutils literal notranslate"><span class="pre">Interval</span></code> and <code class="docutils literal notranslate"><span class="pre">IntervalIndex</span></code> objects, improved support for ‘uint64’ data type, support for the Table Schema json spec, exporting styled DataFrames to excel, … see the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/version/0.20/whatsnew.html#v0-20-1-may-5-2017">release notes</a> for the highlights section), but we will here talk briefly about one major new feature: the <code class="docutils literal notranslate"><span class="pre">.agg</span></code> for DataFrames.
+This methods should feel familiar to users; an API that mirrors the <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>, <code class="docutils literal notranslate"><span class="pre">.rolling()</span></code>, and <code class="docutils literal notranslate"><span class="pre">.resample()</span></code>
 versions. Here’s a small example.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                  <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;2000-01-01&quot;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
 <span class="go">                   A         B</span>
@@ -282,18 +273,18 @@ versions. Here’s a small example.</p>
 <span class="go">2000-01-04  1.955856 -1.016898</span>
 </pre></div>
 </div>
-<p>We can perform a <code class="docutils literal"><span class="pre">.describe()</span></code> like aggregation quite easily. The items
+<p>We can perform a <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> like aggregation quite easily. The items
 that we are aggregating are returned as the <em>rows</em>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">])</span>
 <span class="go">            A         B</span>
 <span class="go">min -0.143427 -1.016898</span>
 <span class="go">max  1.955856  0.663300</span>
 </pre></div>
 </div>
 <p>If we perform the same aggregation when grouping, notice that the
-returned rows are the <em>group</em> names, and the columns are a <code class="docutils literal"><span class="pre">MultiIndex</span></code>
+returned rows are the <em>group</em> names, and the columns are a <code class="docutils literal notranslate"><span class="pre">MultiIndex</span></code>
 composed of the column and the aggregation name.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">weekday_name</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">weekday_name</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">])</span>
 <span class="go">                 A                   B</span>
 <span class="go">               min       max       min       max</span>
 <span class="go">Monday    1.669802  1.669802  0.560368  0.560368</span>
@@ -302,8 +293,8 @@ composed of the column and the aggregation name.</p>
 <span class="go">Tuesday   1.955856  1.955856 -1.016898 -1.016898</span>
 </pre></div>
 </div>
-<p>In fact you can easily transform between these formats via <code class="docutils literal"><span class="pre">.stack()</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">weekday_name</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+<p>In fact you can easily transform between these formats via <code class="docutils literal notranslate"><span class="pre">.stack()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">weekday_name</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
 <span class="go">                     A         B</span>
 <span class="go">Monday   min  1.669802  0.560368</span>
 <span class="go">         max  1.669802  0.560368</span>
@@ -316,7 +307,7 @@ composed of the column and the aggregation name.</p>
 </pre></div>
 </div>
 <p>Fundamentally, grouping with an aggregation has an additional dimension compared
-to aggregation on a Series/DataFrame. We choose to conform to the <code class="docutils literal"><span class="pre">.describe()</span></code>
+to aggregation on a Series/DataFrame. We choose to conform to the <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>
 layout as this allows easy display and further processing of the results.</p>
 </div>
 <div class="section" id="new-module-privacy">
@@ -324,7 +315,7 @@ layout as this allows easy display and further processing of the results.</p>
 <p>Like any project of reasonable size, pandas has developed a smattering of supporting modules to deliver that great experience you know and love.
 Quite a few of these “internal” modules have been moved to new homes, as part of a broad effort make the code base more sensible and maintainable.</p>
 <p>The fact that “internal” is in scare-quotes reveals a problem we had before.
-Modules like <code class="docutils literal"><span class="pre">pandas.lib.pyx</span></code> were public, according to Python’s conventions of designating private modules with a single leading underscore.
+Modules like <code class="docutils literal notranslate"><span class="pre">pandas.lib.pyx</span></code> were public, according to Python’s conventions of designating private modules with a single leading underscore.
 However, nothing in there was ever intended to be used by anyone outside pandas; methods in there were never included in our documentation.</p>
 <p>To clarify the situation, this release moved around a lot of code. See the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/version/0.20/whatsnew.html#reorganization-of-the-library-privacy-changes">new module privacy</a> section for more.
 This shouldn’t affect most end users. Some library authors will need to release updates to avoid the deprecations.
