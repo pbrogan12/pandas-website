@@ -1,18 +1,16 @@
-v0.22.0 Final (December 29, 2017)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+v0.23.0rc2 Final (May 2, 2018)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is a major release from 0.21.1 and includes a single, API-breaking change.
-We recommend that all users upgrade to this version after carefully reading the
-release note.
+This is the second release candidate for 0.23.0, and includes a number of API changes, deprecations, new features, enhancements, and performance improvements along with a large number of bug fixes.
+We recommend that all users try this release candidate, and `report any issues <https://github.com/pandas-dev/pandas/issues>`__.
+We plan to issue the final relase on May 7th.
 
-The only changes are:
+Install this release candidate with
 
-- The sum of an empty or all-*NA* ``Series`` is now ``0``
-- The product of an empty or all-*NA* ``Series`` is now ``1``
-- We've added a ``min_count`` parameter to ``.sum()`` and ``.prod()`` controlling
-  the minimum number of valid values for the result to be valid. If fewer than
-  ``min_count`` non-*NA* values are present, the result is *NA*. The default is
-  ``0``. To return ``NaN``, the 0.21 behavior, use ``min_count=1``.
+    conda install -c conda-forge --label=rc pandas=0.23.0rc2
 
-See the `pandas 0.22.0 whatsnew <https://pandas.pydata.org/pandas-docs/version/0.22.0/whatsnew.html#whatsnew-0220>`__
-overview for further explanation of all the places in the library this affects.
+or from PyPI with
+
+    python3 -m pip install --pre --upgrade pandas==0.23.0rc2
+
+See the `pandas 0.23.0 whatsnew <https://pandas.pydata.org/pandas-docs/version/0.23.0/whatsnew.html#whatsnew-0230>`__ a full list of changes.
