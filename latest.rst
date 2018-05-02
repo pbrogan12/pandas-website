@@ -5,11 +5,11 @@ This is the second release candidate for 0.23.0, and includes a number of API ch
 We recommend that all users try this release candidate, and `report any issues <https://github.com/pandas-dev/pandas/issues>`__.
 We plan to issue the final relase on May 7th.
 
-Install this release candidate with
+Install this release candidate with::
 
     conda install -c conda-forge --label=rc pandas=0.23.0rc2
 
-or from PyPI with
+or from PyPI with::
 
     python3 -m pip install --pre --upgrade pandas==0.23.0rc2
 
