@@ -17,7 +17,7 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-    <title>v0.23.0rc2 Final (May 2, 2018) &#8212; pandas: Python Data Analysis Library</title>
+    <title>v0.23.0 Final (May 15, 2018) &#8212; pandas: Python Data Analysis Library</title>
     <link rel="stylesheet" href="_static/pydata.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" src="_static/documentation_options.js"></script>
@@ -56,18 +56,10 @@
 <h3>Versions</h3>
 
 
-  <div class="tile" >
-      <h4>Release Candidate</h4>
-      0.23.0rc2 - May 2018 <br/>
-      <a href="https://pypi.org/project/pandas/0.23.0rc2/#files">download</a> //
-      <a href="http://pandas.pydata.org/pandas-docs/version/0.23/">docs</a> //
-      <a href="http://pandas.pydata.org/pandas-docs/version/0.23/pandas.pdf">pdf</a>
-  </div>
-
 
 	<div class="tile">
 				<h4>Release</h4>
-				0.22.0 - December 2017 <br/>
+				0.23.0 - May 2018 <br/>
 				<a href="https://pypi.org/project/pandas/#files">download</a>          //
 				<a href="http://pandas.pydata.org/pandas-docs/stable/">docs</a> //
 				<a href="http://pandas.pydata.org/pandas-docs/stable/pandas.pdf">pdf</a>
@@ -75,13 +67,21 @@
 
 	<div class="tile">
 		<h4>Development</h4>
-        0.23.0 - 2018<br/>
+        0.24.0 - 2018<br/>
         <a href="https://github.com/pydata/pandas">github</a> //
         <a href="http://pandas-docs.github.io/pandas-docs-travis/">docs</a>
     </div>
 
     <div class="tile">
       <h4>Previous Releases</h4>
+      
+          <div>
+              0.22.0 -
+              <a href="https://pypi.org/project/pandas/0.22.0/#files">download</a>          //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.22/">docs</a> //
+              <a href="http://pandas.pydata.org/pandas-docs/version/0.22/pandas.pdf">pdf</a>
+          </div>
+
       
           <div>
               0.21.1 -
@@ -213,20 +213,31 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="v0-23-0rc2-final-may-2-2018">
-<h1>v0.23.0rc2 Final (May 2, 2018)<a class="headerlink" href="#v0-23-0rc2-final-may-2-2018" title="Permalink to this headline">¶</a></h1>
-<p>This is the second release candidate for 0.23.0, and includes a number of API changes, deprecations, new features, enhancements, and performance improvements along with a large number of bug fixes.
-We recommend that all users try this release candidate, and <a class="reference external" href="https://github.com/pandas-dev/pandas/issues">report any issues</a>.
-We plan to issue the final relase on May 7th.</p>
-<p>Install this release candidate with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="o">/</span><span class="n">label</span><span class="o">/</span><span class="n">rc</span> <span class="n">pandas</span><span class="o">=</span><span class="mf">0.23</span><span class="o">.</span><span class="mi">0</span><span class="n">rc2</span>
+  <div class="section" id="v0-23-0-final-may-15-2018">
+<h1>v0.23.0 Final (May 15, 2018)<a class="headerlink" href="#v0-23-0-final-may-15-2018" title="Permalink to this headline">¶</a></h1>
+<p>This is a major release from 0.22.0 and includes a number of API changes, new features, enhancements, and performance improvements along with a large number of bug fixes.</p>
+<p>Highlights include:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.23.0/whatsnew.html#json-read-write-round-trippable-with-orient-table">Round-trippable JSON format with ‘table’ orient</a>.</li>
+<li><a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.23.0/whatsnew.html#instantation-from-dicts-preserves-dict-insertion-order-for-python-3-6">Instantiation from dicts respects order for Python 3.6+</a>.</li>
+<li><a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.23.0/whatsnew.html#assign-accepts-dependent-arguments">Dependent column arguments for assign</a>.</li>
+<li><a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.23.0/whatsnew.html#merging-on-a-combination-of-columns-and-index-levels">Merging / sorting on a combination of columns and index levels</a>.</li>
+<li><a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.23.0/whatsnew.html#extending-pandas-with-custom-types-experimental">Extending Pandas with custom types</a>.</li>
+<li><a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.23.0/whatsnew.html#categorical-groupers-has-gained-an-observed-keyword">Excluding unobserved categories from groupby</a>.</li>
+</ul>
+<p>The release candidate can be installed with conda from our development channel (builds for osx-64, linux-64 and win-64 for Python 2.7, Python 3.5, and Python 3.6 are all available):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pandas</span>
 </pre></div>
 </div>
-<p>or from PyPI with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">pre</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pandas</span><span class="o">==</span><span class="mf">0.23</span><span class="o">.</span><span class="mi">0</span><span class="n">rc2</span>
+<p>or conda forge:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">pandas</span>
 </pre></div>
 </div>
-<p>See the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.23.0/whatsnew.html#whatsnew-0230">pandas 0.23.0 whatsnew</a> a full list of changes.</p>
+<p>Or via PyPI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pandas</span><span class="o">==</span><span class="mf">0.23</span><span class="o">.</span><span class="mi">0</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.23.0/whatsnew.html#v0-23-0">full whatsnew</a> for a list of all the changes.</p>
 </div>
 
 
